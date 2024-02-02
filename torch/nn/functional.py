@@ -3312,6 +3312,8 @@ def l1_loss(
     reduce: Optional[bool] = None,
     reduction: str = "mean",
 ) -> Tensor:  # noqa: D400,D402
+    if reduce=="sum":
+        raise Exception
     r"""l1_loss(input, target, size_average=None, reduce=None, reduction='mean') -> Tensor
 
     Function that takes the mean element-wise absolute value difference.
